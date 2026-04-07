@@ -42,7 +42,7 @@ const youtubeEmbed = '';
       <div class="credits">
         <div class="credit-row">
           <span class="label">Artist</span>
-          <span>Andrea's</span>
+          <span>Andrea'S</span>
         </div>
         <div class="credit-row">
           <span class="label">Type</span>
@@ -295,8 +295,13 @@ const youtubeEmbed = '';
       gap: 2rem;
     }
 
+    .credit-row {
+      flex-direction: column;
+      gap: 2px;
+    }
+
     .label {
-      min-width: 120px;
+      min-width: unset;
     }
 
     .badges {

@@ -204,11 +204,7 @@ const youtubeEmbed = '';
     display: block;
   }
 
-  @media (max-width: 600px) {
-    .pair {
-      grid-template-columns: 1fr;
-    }
-  }
+  /* pairs stay side-by-side on mobile, matching the reference */
 
   /* ── Info ── */
   .info {
@@ -293,13 +289,33 @@ const youtubeEmbed = '';
     height: 140px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    .info {
+      padding: 28px 20px 48px;
+      gap: 2rem;
+    }
+
+    .label {
+      min-width: 120px;
+    }
+
     .badges {
-      gap: 24px;
+      gap: 16px;
     }
 
     .badges img {
-      height: 56px;
+      width: 80px;
+      height: 80px;
+    }
+
+    .badges img.badge-lg {
+      width: 100px;
+      height: 100px;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 4px;
     }
   }
 

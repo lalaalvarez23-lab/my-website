@@ -139,12 +139,27 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   }
 
   @media (max-width: 768px) {
+    main {
+      height: auto;
+      min-height: 100svh;
+      align-items: flex-start;
+      padding: 80px 24px 80px;
+    }
+
     .about-card {
-      flex-direction: column;
+      width: 100%;
     }
 
     .about-card img {
       width: 100%;
+      aspect-ratio: 3 / 4;
+    }
+
+    .text-col {
+      position: static;
+      transform: none;
+      width: 100%;
+      margin-top: 24px;
     }
   }
 

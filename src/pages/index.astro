@@ -60,6 +60,13 @@ const project = {
     transition: opacity 0.3s ease;
   }
 
+  @media (max-width: 768px) {
+    .project-card,
+    .thumb {
+      width: min(280px, 78vw);
+    }
+  }
+
   .project-card:hover .thumb {
     opacity: 0.75;
   }

@@ -1,0 +1,321 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+// Image layout: 'full' = full width, 'pair' = two side by side
+const layout = [
+  { type: 'full',  src: `${base}images/Final_Cut_01_00_49_20.jpg`,             alt: 'Living room' },
+  { type: 'full',  src: `${base}images/Still_1.6.1.jpg`,                       alt: 'Kitchen' },
+  { type: 'pair',  left: `${base}images/Still_1.4.1.jpg`,                      right: `${base}images/Still_1.31.1.jpg`, alt: 'Desert' },
+  { type: 'full',  src: `${base}images/Still_1.40.2.jpg`,                      alt: 'Oasis' },
+  { type: 'full',  src: `${base}images/Final_Cut_01_02_17_00.jpg`,             alt: 'Surrender' },
+  { type: 'full',  src: `${base}images/Still_2026-03-02_164824_38.2.1.jpg`,    alt: 'Transformation' },
+];
+
+// Paste the YouTube embed URL here when the video is released, e.g.:
+// 'https://www.youtube.com/embed/XXXXXXXXXXX'
+const youtubeEmbed = '';
+---
+
+<Layout title="Desierto — Laura Alvarez">
+  <header>
+    <a href={base} class="back">← Laura Alvarez</a>
+  </header>
+
+  <main>
+    <!-- Project info -->
+    <div class="info">
+      <div class="info-left">
+        <h1>Desierto</h1>
+        <p class="description">
+          Trapped in the ordinary routine, a woman is offered a mysterious fruit. After consuming it her behavior begins to shift, revealing an instinctive, almost animal nature.
+        </p>
+        <p class="description">
+          On a journey through her mind she wanders through an endless desert, driven by a thirst she cannot name.
+        </p>
+        <p class="description">
+          Her indulgence leads her to an oasis where she surrenders to pleasure, as the boundaries between relief and perdition dissolve. She returns transformed, the fruit; temptation, routine, drug, salvation, lingers as a symbol of excess.
+        </p>
+      </div>
+
+      <div class="credits">
+        <div class="credit-row">
+          <span class="label">Artist</span>
+          <span>Andrea's</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Type</span>
+          <span>Music Video</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Year</span>
+          <span>2026</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Release</span>
+          <span>April 17, 2026</span>
+        </div>
+        <div class="credit-divider"></div>
+        <div class="credit-row">
+          <span class="label">Director</span>
+          <span>Laura Alvarez</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Director of Photography</span>
+          <span>Geffen Shichor</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Producer</span>
+          <span>Liam Young</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Art Director</span>
+          <span>Jeweliana Escamilla</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Animation & 3D Modeling</span>
+          <span>Yi Cheung & Mars Seay</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Compositing</span>
+          <span>Laura Alvarez</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Production Assistant</span>
+          <span>Luis Enrique Moreno</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Key Cast</span>
+          <span>Adriana Donca</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Technical Advisors</span>
+          <span>Alexey Marfin & Orin Torati</span>
+        </div>
+
+        <!-- Awards — inside right column, below credits -->
+        <div class="awards">
+          <div class="credit-divider"></div>
+          <h2 class="awards-title">Awards</h2>
+<div class="badges">
+            <img src={`${base}images/bmva-badge-of-honor.png`}          alt="BMVA 2026 — Badge of Honor" class="badge-lg" />
+            <img src={`${base}images/europe-mva-honorable-mention.png`} alt="Europe Music Video Awards 2026 — Honorable Mention" />
+            <img src={`${base}images/intl-indie-film-nominee.png`}      alt="International Indie Film & Screenplay Festival 2026 — Nominee" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video embed — shows automatically once youtubeEmbed is filled in -->
+    {youtubeEmbed && (
+      <div class="video-wrap">
+        <iframe
+          src={youtubeEmbed}
+          title="Desierto"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+    )}
+
+    <!-- Images -->
+    <div class="images">
+      {layout.map((item) =>
+        item.type === 'full'
+          ? <img src={item.src} alt={item.alt} class="full" />
+          : <div class="pair">
+              <img src={item.left}  alt={item.alt} />
+              <img src={item.right} alt={item.alt} />
+            </div>
+      )}
+    </div>
+  </main>
+
+  <footer>
+    <span>Laura Alvarez — Director</span>
+    <span>© 2026 All rights reserved</span>
+  </footer>
+</Layout>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .back {
+    font-size: 12px;
+    color: #707070;
+    transition: color 0.15s;
+  }
+
+  .back:hover {
+    color: #1a1a1a;
+  }
+
+  main {
+    padding-top: 56px; /* header height */
+  }
+
+  /* ── Video ── */
+  .video-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    margin-bottom: 2px;
+  }
+
+  .video-wrap iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ── Images ── */
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .images img.full {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .pair img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .pair {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── Info ── */
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 40px 24px 80px;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+  }
+
+  .description {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #707070;
+    max-width: 480px;
+  }
+
+  .credits {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .credit-row {
+    display: flex;
+    gap: 2rem;
+    font-size: 12px;
+    color: #707070;
+  }
+
+  .label {
+    min-width: 160px;
+    color: #1a1a1a;
+  }
+
+  .credit-divider {
+    border-top: 1px solid #e0e0e0;
+    margin-block: 8px;
+  }
+
+  /* ── Awards ── */
+  .awards {
+    margin-top: 8px;
+  }
+
+  .awards-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+
+  .awards-label {
+    font-size: 12px;
+    color: #707070;
+    margin-bottom: 20px;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .badges img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+  }
+
+  .badges img.badge-lg {
+    width: 140px;
+    height: 140px;
+  }
+
+  @media (max-width: 600px) {
+    .badges {
+      gap: 24px;
+    }
+
+    .badges img {
+      height: 56px;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #707070;
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

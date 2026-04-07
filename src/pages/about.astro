@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Layout title="About — Laura Alvarez">
+  <header>
+    <a href={base} class="back">← Laura Alvarez</a>
+    <nav>
+      <a href={`${base}about`} class="active">About</a>
+      <a href={`${base}contact`}>Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="about-card">
+      <img src={`${base}images/Laura_Alvarez_Headshot.jpg`} alt="Laura Alvarez" />
+      <div class="text-col">
+        <div class="meta">
+          <span class="name">Laura Alvarez</span>
+          <span class="info">Director · VFX Compositor</span>
+        </div>
+        <p class="bio">
+          Laura Alvarez is a Colombian director, with a background in architecture and design,
+          currently based in Los Angeles, California. Her work explores the intersection between
+          everyday reality and moments of fantastical fiction, seamlessly merging both into
+          experiences that feel ordinarily extraordinary. Her work revolves around music videos,
+          branded content and short films.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <a href="https://www.instagram.com/lauraalvarezc_/" target="_blank" rel="noopener noreferrer" class="instagram">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+    </svg>
+    <span>lauraalvarezc_</span>
+  </a>
+
+  <footer>
+    <span>Laura Alvarez — Director</span>
+    <span>© 2026 All rights reserved</span>
+  </footer>
+</Layout>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .back {
+    font-size: 12px;
+    color: #707070;
+    transition: color 0.15s;
+  }
+
+  .back:hover {
+    color: #1a1a1a;
+  }
+
+  nav {
+    display: flex;
+    gap: 24px;
+  }
+
+  nav a {
+    font-size: 12px;
+    color: #707070;
+    transition: color 0.15s;
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: #1a1a1a;
+  }
+
+  main {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 56px;
+  }
+
+  .about-card {
+    position: relative;
+  }
+
+  .about-card img {
+    width: 320px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .text-col {
+    position: absolute;
+    left: calc(320px + 40px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .name {
+    font-size: 12px;
+    color: #1a1a1a;
+  }
+
+  .info {
+    font-size: 11px;
+    color: #707070;
+  }
+
+  .bio {
+    font-size: 12px;
+    color: #707070;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .about-card {
+      flex-direction: column;
+    }
+
+    .about-card img {
+      width: 100%;
+    }
+  }
+
+  .instagram {
+    position: fixed;
+    bottom: 20px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #707070;
+    transition: color 0.15s;
+    z-index: 10;
+  }
+
+  .instagram:hover {
+    color: #1a1a1a;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #707070;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

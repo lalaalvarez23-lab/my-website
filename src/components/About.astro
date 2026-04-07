@@ -1,0 +1,89 @@
+---
+---
+
+<section id="about">
+  <hr class="divider" />
+  <div class="container about-inner">
+    <div class="about-left">
+      <p class="section-label">About</p>
+      <h2>Architect of<br />Moving Images</h2>
+    </div>
+
+    <div class="about-right">
+      <p>
+        I'm Laura Alvarez — a director and VFX compositor with roots in architecture.
+        My training in spatial design shapes how I think about every frame: as a built
+        environment, a constructed reality with its own logic, light, and weight.
+      </p>
+      <p>
+        In the VFX pipeline I work at the intersection of live-action and digital
+        worlds, compositing elements that feel as grounded and tactile as physical
+        spaces. As a director, I bring that same rigor to storytelling — precise,
+        considered, and deeply visual.
+      </p>
+      <p>
+        I'm drawn to projects that demand both technical depth and creative vision:
+        short films, commercials, title sequences, and visual effects for narrative work.
+      </p>
+
+      <ul class="skills">
+        <li>Direction</li>
+        <li>VFX Compositing</li>
+        <li>Architectural Visualization</li>
+        <li>Nuke</li>
+        <li>After Effects</li>
+        <li>Pre-production &amp; Concept</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-top: 1rem;
+  }
+
+  .about-right p {
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    max-width: 560px;
+  }
+
+  .about-right p:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  .skills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skills li {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--border);
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

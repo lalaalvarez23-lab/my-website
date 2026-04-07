@@ -1,0 +1,47 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<header>
+  <a href={base} class="name">Laura Alvarez</a>
+  <nav>
+    <a href={`${base}about`}>About</a>
+    <a href={`${base}contact`}>Contact</a>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .name {
+    font-size: 12px;
+    color: #1a1a1a;
+  }
+
+  nav {
+    display: flex;
+    gap: 24px;
+  }
+
+  nav a {
+    font-size: 12px;
+    color: #707070;
+    transition: color 0.15s;
+  }
+
+  nav a:hover {
+    color: #1a1a1a;
+  }
+</style>

@@ -4,31 +4,43 @@ import Header from '../components/Header.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
-const project = {
-  title: 'Desierto',
-  category: 'Music Video',
-  year: '2026',
-  image: `${base}images/desierto.jpg`,
-  link: `${base}projects/desierto`,
-};
+const projects = [
+  {
+    title: 'Desierto',
+    category: 'Music Video',
+    year: '2026',
+    image: `${base}images/desierto.jpg`,
+    link: `${base}projects/desierto`,
+  },
+  {
+    title: 'Fuser Co-Create Challenge',
+    category: 'Mock Ad',
+    year: '2026',
+    image: `${base}images/Poster_Fuser.jpg`,
+    link: `${base}projects/fuser`,
+    badge: 'Winner',
+  },
+];
 ---
 
 <Layout title="Laura Alvarez">
   <Header />
 
   <main>
-    <a href={project.link} class="project-card">
-      <div class="thumb">
-        {project.image
-          ? <img src={project.image} alt={project.title} />
-          : <div class="placeholder" />
-        }
-      </div>
-      <div class="meta">
-        <span class="title">{project.title}</span>
-        <span class="info">{project.category}, {project.year}</span>
-      </div>
-    </a>
+    {projects.map((project) => (
+      <a href={project.link} class="project-card">
+        <div class="thumb">
+          {project.image
+            ? <img src={project.image} alt={project.title} />
+            : <div class="placeholder" />
+          }
+        </div>
+        <div class="meta">
+          <span class="title">{project.title}</span>
+          <span class="info">{project.category}, {project.year}{project.badge ? ` [${project.badge}]` : ''}</span>
+        </div>
+      </a>
+    ))}
   </main>
 
   <footer>
@@ -39,10 +51,13 @@ const project = {
 
 <style>
   main {
-    height: 100svh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 80px 24px;
   }
 
   .project-card {
@@ -61,6 +76,10 @@ const project = {
   }
 
   @media (max-width: 768px) {
+    main {
+      gap: 48px;
+    }
+
     .project-card,
     .thumb {
       width: min(280px, 78vw);

@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const layout = [
+  { type: 'full', src: `${base}images/Fuser_01.jpg`,  alt: 'Fuser 01' },
+  { type: 'pair', left: `${base}images/fuser_02.jpg`, right: `${base}images/fuser_03.jpg`, alt: 'Fuser' },
+  { type: 'full', src: `${base}images/fuser_05.jpg`,  alt: 'Fuser 05' },
+  { type: 'pair', left: `${base}images/fuser_04.jpg`, right: `${base}images/fuser_06.jpg`, alt: 'Fuser' },
+  { type: 'full', src: `${base}images/fuser_07.jpg`,  alt: 'Fuser 07' },
+];
+---
+
+<Layout title="Fuser Co-Create Challenge — Laura Alvarez">
+  <header>
+    <a href={base} class="back">← Laura Alvarez</a>
+  </header>
+
+  <main>
+    <!-- Project info -->
+    <div class="info">
+      <div class="info-left">
+        <h1>Fuser Co-Create Challenge</h1>
+        <p class="description">
+          A cinematic mock advertisement created as part of a creative challenge launched by Fuser and Contra, in which participants were invited to develop a brand exploration campaign using Fuser's AI canvas platform, including the Compositor Node and Creative Code feature.
+        </p>
+        <p class="description">
+          The campaign uses a fictional advertisement for Panini to explore how AI workflows can be used to create emotionally engaging and visually cohesive branded content. Through careful control of color palettes, environments, lighting, and character continuity across shots, the project aimed to achieve a cinematic realism that would allow the campaign to feel believable despite being generated through AI tools.
+        </p>
+        <p class="description">
+          A central focus of the project was maintaining consistency between scenes and characters in order to create a unified visual language and emotional connection with the viewer. By combining AI-generated imagery with compositing and refinement workflows, the advertisement sought to demonstrate how AI can be used not only as a technical tool, but also as a medium capable of supporting storytelling, atmosphere, and emotional resonance within commercial campaigns.
+        </p>
+      </div>
+
+      <div class="credits">
+        <div class="credit-row">
+          <span class="label">Type</span>
+          <span>Mock Ad</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Year</span>
+          <span>2026</span>
+        </div>
+        <div class="credit-divider"></div>
+        <div class="credit-row">
+          <span class="label">Director</span>
+          <span>Laura Alvarez</span>
+        </div>
+        <div class="credit-row">
+          <span class="label">Created using</span>
+          <span>Fuser</span>
+        </div>
+        <div class="credit-divider"></div>
+        <div class="credit-row">
+          <span class="label">Awards</span>
+          <span>Second Place</span>
+        </div>
+        <div class="credit-divider"></div>
+        <div class="badges">
+          <img src={`${base}images/Fuserlogo.png`} alt="Fuser" class="badge-logo" />
+          <img src={`${base}images/contra.png`} alt="Contra" class="badge-logo" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Images -->
+    <div class="images">
+      {layout.map((item) =>
+        item.type === 'full'
+          ? <img src={item.src} alt={item.alt} class="full" />
+          : <div class="pair">
+              <img src={item.left}  alt={item.alt} />
+              <img src={item.right} alt={item.alt} />
+            </div>
+      )}
+    </div>
+  </main>
+
+  <footer>
+    <span>Laura Alvarez — Director</span>
+    <span>© 2026 All rights reserved</span>
+  </footer>
+</Layout>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .back {
+    font-size: 12px;
+    color: #707070;
+    transition: color 0.15s;
+  }
+
+  .back:hover {
+    color: #1a1a1a;
+  }
+
+  main {
+    padding-top: 56px;
+  }
+
+  /* ── Images ── */
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .images img.full {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pair img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Info ── */
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 40px 24px 80px;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+  }
+
+  .description {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #707070;
+    max-width: 480px;
+  }
+
+  .credits {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .credit-row {
+    display: flex;
+    gap: 2rem;
+    font-size: 12px;
+    color: #707070;
+  }
+
+  .label {
+    min-width: 160px;
+    color: #1a1a1a;
+  }
+
+  .credit-divider {
+    border-top: 1px solid #e0e0e0;
+    margin-block: 8px;
+  }
+
+  .badges {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .badge-logo {
+    width: 121px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #707070;
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      grid-template-columns: 1fr;
+      padding: 28px 20px 48px;
+      gap: 2rem;
+    }
+
+    .credit-row {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .label {
+      min-width: unset;
+    }
+
+    footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+  }
+</style>

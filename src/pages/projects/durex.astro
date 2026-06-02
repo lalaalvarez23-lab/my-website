@@ -1,0 +1,378 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+// Paste the YouTube embed URL here when the video is released
+const youtubeEmbed = '';
+
+const layout = [
+  { type: 'full', src: `${base}images/STILL_02_DUREX.jpg`, alt: 'Still 02' },
+  { type: 'full', src: `${base}images/STILL_03_DUREX.jpg`, alt: 'Still 03' },
+  { type: 'full', src: `${base}images/STILL_01 DUREX.jpg`, alt: 'Still 01' },
+];
+---
+
+<Layout title="DUREX — Laura Alvarez">
+  <header>
+    <a href={base} class="back">← Laura Alvarez</a>
+  </header>
+
+  <main>
+    <div class="info">
+      <div class="info-top">
+        <h1>DUREX</h1>
+        <p class="description">What happens when fear gets in the way? This speculative advertisement examines how anxiety can overshadow intimacy, using a playful yet cinematic visual language to transform fear into freedom. The film celebrates the confidence that comes with protection, inviting audiences to embrace every moment fully.</p>
+        <p class="description coming-soon-note">Coming Soon</p>
+      </div>
+
+      <div class="credits">
+        <div class="credits-col">
+          <div class="credit-row">
+            <span class="label">Type</span>
+            <span>Spec Ad</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Year</span>
+            <span>2026</span>
+          </div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Direction</div>
+          <div class="credit-row">
+            <span class="label">Director</span>
+            <span>Laura Alvarez</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Producer</span>
+            <span>Laura Alvarez</span>
+          </div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Camera</div>
+          <div class="credit-row">
+            <span class="label">Director of Photography</span>
+            <span>Geffen Shichor</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">1st AC</span>
+            <span>Javier Vizarreta</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">2nd AC</span>
+            <span>David Pineda</span>
+          </div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Electric & Grip</div>
+          <div class="credit-row">
+            <span class="label">Gaffer</span>
+            <span>Nico Cauton</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Key Grip</span>
+            <span>Jiri Balcar</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Grip</span>
+            <span>Wilson Santos Estrada</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Grip</span>
+            <span>Giulio Ginesi</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Best Boy Electric</span>
+            <span>Shae Welsh</span>
+          </div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Casting</div>
+          <div class="credit-row">
+            <span class="label">Girl</span>
+            <span>Adriana Donca</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Guy</span>
+            <span>Julian Quintero</span>
+          </div>
+        </div>
+
+        <div class="credits-col">
+          <div class="credit-section-label">Art Department</div>
+          <div class="credit-row">
+            <span class="label">VFX (3D Modelling)</span>
+            <span>Jairo Rodriguez</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Concept Art</span>
+            <span>Adriana Donca</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Art Director</span>
+            <span>Nandar Moe Myint Thu</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Set Dresser</span>
+            <span>Evangelos Koutsioumpas</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Construction Coordinator</span>
+            <span>Christopher Angelo</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Carpenter</span>
+            <span>Fernando Acuña</span>
+          </div>
+          <div class="credit-row">
+            <span class="label">Scenic Painter</span>
+            <span>Alex Thu</span>
+          </div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Sound Design</div>
+          <div class="credit-row">
+            <span class="label">Sound Design & Post Production</span>
+            <span>Juan Felipe Murillo</span>
+          </div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Color</div>
+          <div class="credit-row">
+            <span class="label">Colorist</span>
+            <span>Geffen Shichor</span>
+          </div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">AV</div>
+          <div class="credit-row">
+            <span class="label">LED Systems Technician</span>
+            <span>Phil Logan</span>
+          </div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Special Thanks</div>
+          <div class="credit-row"><span class="label"></span><span>Emil Tatevosian</span></div>
+          <div class="credit-row"><span class="label"></span><span>Liam Young</span></div>
+          <div class="credit-row"><span class="label"></span><span>Alexey Marfin</span></div>
+          <div class="credit-row"><span class="label"></span><span>Orin Torati</span></div>
+          <div class="credit-row"><span class="label"></span><span>Ana Maria Cadena</span></div>
+        </div>
+      </div>
+    </div>
+
+    {youtubeEmbed && (
+      <div class="video-wrap">
+        <iframe
+          src={youtubeEmbed}
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          title="DUREX — Laura Alvarez"
+        />
+      </div>
+    )}
+
+    <div class="images">
+      {layout.map((item) =>
+        item.type === 'full'
+          ? <img src={item.src} alt={item.alt} class="full" />
+          : <div class="pair">
+              <img src={item.left} alt={item.alt} />
+              <img src={item.right} alt={item.alt} />
+            </div>
+      )}
+    </div>
+  </main>
+
+  <footer>
+    <span>Laura Alvarez — Director</span>
+    <span>© 2026 All rights reserved</span>
+  </footer>
+</Layout>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .back {
+    font-size: 12px;
+    color: #707070;
+    transition: color 0.15s;
+  }
+
+  .back:hover {
+    color: #1a1a1a;
+  }
+
+  main {
+    padding-top: 56px;
+  }
+
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #000;
+    margin-bottom: 8px;
+  }
+
+  .video-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .images img.full {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pair img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 40px 24px 80px;
+    width: min(1200px, 100%);
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .info-top {
+    max-width: 480px;
+  }
+
+  h1 {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+  }
+
+  .description {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #707070;
+  }
+
+  .coming-soon-note {
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .credits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 4rem;
+    align-items: start;
+  }
+
+  .credits-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .credit-section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+
+  .credit-row {
+    display: flex;
+    gap: 2rem;
+    font-size: 12px;
+    color: #707070;
+  }
+
+  .label {
+    min-width: 140px;
+    color: #1a1a1a;
+  }
+
+  .credit-divider {
+    border-top: 1px solid #e0e0e0;
+    margin-block: 8px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #707070;
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      padding: 28px 20px 48px;
+    }
+
+    .credits {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .credit-row {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .label {
+      min-width: unset;
+    }
+
+    footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+  }
+</style>

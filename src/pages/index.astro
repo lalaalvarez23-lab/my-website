@@ -12,13 +12,22 @@ const projects = [
     image: `${base}images/desierto.jpg`,
     link: `${base}projects/desierto`,
   },
+  // ARCHIVED
+  // {
+  //   title: 'Fuser Co-Create Challenge',
+  //   category: 'Mock Ad',
+  //   year: '2026',
+  //   image: `${base}images/Poster_Fuser.jpg`,
+  //   link: `${base}projects/fuser`,
+  //   badge: 'Winner',
+  // },
   {
-    title: 'Fuser Co-Create Challenge',
-    category: 'Mock Ad',
+    title: 'DUREX',
+    category: 'Spec Ad',
     year: '2026',
-    image: `${base}images/Poster_Fuser.jpg`,
-    link: `${base}projects/fuser`,
-    badge: 'Winner',
+    image: `${base}images/POSTER_DUREX.png`,
+    link: `${base}projects/durex`,
+    badge: 'Coming Soon',
   },
 ];
 ---
@@ -36,8 +45,11 @@ const projects = [
           }
         </div>
         <div class="meta">
-          <span class="title">{project.title}</span>
-          <span class="info">{project.category}, {project.year}{project.badge ? ` [${project.badge}]` : ''}</span>
+          <span class="title-row">
+            <span class="title">{project.title}</span>
+            {project.badge === 'Coming Soon' && <span class="coming-soon">COMING SOON, {project.year}</span>}
+          </span>
+          <span class="info">{project.category}, {project.year}{project.badge && project.badge !== 'Coming Soon' ? ` [${project.badge}]` : ''}</span>
         </div>
       </a>
     ))}
@@ -119,9 +131,21 @@ const projects = [
     align-items: baseline;
   }
 
+  .title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
   .title {
     font-size: 12px;
     color: var(--text);
+  }
+
+  .coming-soon {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
   }
 
   .info {

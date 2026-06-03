@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const projects = [
+  {
+    title: 'Trespass',
+    category: 'Short Film',
+    year: '2026',
+    image: `${base}images/TRESPASS_POSTER.png`,
+    link: `${base}projects/trespass`,
+  },
+  {
+    title: 'Durex',
+    category: 'Spec Ad',
+    year: '2026',
+    image: `${base}images/POSTER_DUREX.png`,
+    link: `${base}projects/durex`,
+  },
+  {
+    title: 'Desierto',
+    category: 'Music Video',
+    year: '2026',
+    image: `${base}images/desierto.jpg`,
+    link: `${base}projects/desierto`,
+  },
+  {
+    title: 'Fuser Co-Create Challenge',
+    category: 'Mock Ad',
+    year: '2026',
+    image: `${base}images/Poster_Fuser.jpg`,
+    link: `${base}projects/fuser`,
+    badge: 'Winner',
+  },
+];
+---
+
+<Layout title="Laura Alvarez">
+  <Header />
+
+  <main>
+    {projects.map((project) => (
+      <a href={project.link} class="project-card">
+        <div class="thumb">
+          {project.image
+            ? <img src={project.image} alt={project.title} />
+            : <div class="placeholder" />
+          }
+        </div>
+        <div class="meta">
+          <span class="title-row">
+            <span class="title">{project.title}</span>
+            {project.badge === 'Coming Soon' && <span class="coming-soon">COMING SOON, {project.year}</span>}
+          </span>
+          <span class="info">{project.category}{project.badge === 'Coming Soon' ? '' : `, ${project.year}`}{project.badge && project.badge !== 'Coming Soon' ? ` [${project.badge}]` : ''}</span>
+        </div>
+      </a>
+    ))}
+  </main>
+
+  <footer>
+    <span>Director · Compositor</span>
+    <span>© {new Date().getFullYear()}</span>
+  </footer>
+</Layout>
+
+<style>
+  main {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 80px 24px;
+  }
+
+  .project-card {
+    display: block;
+    width: 320px;
+    cursor: pointer;
+  }
+
+  .thumb {
+    width: 320px;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #f0f0f0;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      gap: 48px;
+    }
+
+    .project-card,
+    .thumb {
+      width: min(280px, 78vw);
+    }
+  }
+
+  .project-card:hover .thumb {
+    opacity: 0.75;
+  }
+
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    background: #e8e8e8;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 12px;
+    color: var(--text);
+  }
+
+  .coming-soon {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .info {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 24px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+</style>

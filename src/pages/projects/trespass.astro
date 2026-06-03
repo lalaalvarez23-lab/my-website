@@ -1,0 +1,307 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const youtubeEmbed = '';
+
+const layout = [
+  { type: 'full', src: `${base}images/TRESPASS3.jpg`, alt: 'Trespass 03' },
+  { type: 'full', src: `${base}images/TRESPASS4.jpg`, alt: 'Trespass 04' },
+  { type: 'full', src: `${base}images/TRESPASS1.jpg`, alt: 'Trespass 01' },
+  { type: 'full', src: `${base}images/TRESPASS2.jpg`, alt: 'Trespass 02' },
+];
+---
+
+<Layout title="Trespass — Laura Alvarez">
+  <header>
+    <a href={base} class="back">← Laura Alvarez</a>
+  </header>
+
+  <main>
+    <div class="info">
+      <div class="credits">
+        <div class="credits-col description-block">
+          <h1>Trespass</h1>
+          <p class="description">A grieving woman living in a decaying apartment building becomes obsessed with her neighbor. As she secretly watches the life unfolding through the cracks in the wall, her longing for connection spirals into a dangerous fixation with horrifying consequences.</p>
+          <p class="description coming-soon-note">Coming Soon, 2026</p>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="credits">
+
+        <!-- Column 1: Direction, Production, Camera (top) -->
+        <div class="credits-col">
+          <div class="credit-row"><span class="label">Type</span><span>Short Film</span></div>
+          <div class="credit-row"><span class="label">Year</span><span>2026</span></div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Direction</div>
+          <div class="credit-row"><span class="label">Director</span><span>Laura Alvarez</span></div>
+          <div class="credit-row"><span class="label">Assistant Director</span><span>Alex Borger</span></div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Production</div>
+          <div class="credit-row"><span class="label">Producer</span><span>Laura Alvarez</span></div>
+          <div class="credit-row"><span class="label">Producer</span><span>Adriana Donca</span></div>
+          <div class="credit-row"><span class="label">Production Assistant</span><span>Isaac Carpenter</span></div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Camera</div>
+          <div class="credit-row"><span class="label">Director of Photography</span><span>Geffen Shichor</span></div>
+          <div class="credit-row"><span class="label">1st AC</span><span>Javier Vizarreta</span></div>
+          <div class="credit-row"><span class="label">2nd AC</span><span>Katerina Kamysheva</span></div>
+          <div class="credit-row"><span class="label">2nd AC</span><span>Sasha Alaputina</span></div>
+          <div class="credit-row"><span class="label">Gaffer</span><span>Nico Cauton</span></div>
+          <div class="credit-row"><span class="label">Steady Cam Operator</span><span>Jiri Balcar</span></div>
+        </div>
+
+        <!-- Column 2: Camera (grips), Art Department -->
+        <div class="credits-col">
+          <div class="credit-section-label">Electric & Grip</div>
+          <div class="credit-row"><span class="label">Key Grip</span><span>Jiri Balcar</span></div>
+          <div class="credit-row"><span class="label">Grip</span><span>Isaac Barresi</span></div>
+          <div class="credit-row"><span class="label">Grip</span><span>Wilson Santos Estrada</span></div>
+          <div class="credit-row"><span class="label">Grip</span><span>Jonathan Hornby</span></div>
+          <div class="credit-row"><span class="label">Grip</span><span>Giulio Ginesi</span></div>
+          <div class="credit-row"><span class="label">Best Boy Electric</span><span>Shae Welsh</span></div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Art Department</div>
+          <div class="credit-row"><span class="label">Production Designer</span><span>Adriana Donca</span></div>
+          <div class="credit-row"><span class="label">Art Director / Head Carpenter</span><span>Jack London Freedman</span></div>
+          <div class="credit-row"><span class="label">Set Dresser</span><span>Eron Kumar</span></div>
+          <div class="credit-row"><span class="label">Set Dresser & AI Design</span><span>Luis Garcia Grech</span></div>
+          <div class="credit-row"><span class="label">Styling</span><span>Natalia Garcia</span></div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Sound Design</div>
+          <div class="credit-row"><span class="label">Production Sound (On-Set)</span><span>David Dadon</span></div>
+          <div class="credit-row"><span class="label">Production Sound (On-Set)</span><span>Kasiemba Okeyo</span></div>
+          <div class="credit-row"><span class="label">Sound Design & Post Production</span><span>Dimitrios Astrantinis</span></div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Color</div>
+          <div class="credit-row"><span class="label">Colorist</span><span>Nondas Sapidis</span></div>
+        </div>
+
+        <!-- Column 3: Casting, Special Thanks -->
+        <div class="credits-col">
+          <div class="credit-section-label">Casting</div>
+          <div class="credit-row"><span class="label">Salome</span><span>Annika Hautmann</span></div>
+          <div class="credit-row"><span class="label">Johanna</span><span>Sta Sbraski</span></div>
+
+          <div class="credit-divider"></div>
+
+          <div class="credit-section-label">Special Thanks</div>
+          <div class="credit-row"><span class="label"></span><span>Emil Tatevosian</span></div>
+          <div class="credit-row"><span class="label"></span><span>Liam Young</span></div>
+          <div class="credit-row"><span class="label"></span><span>Alexey Marfin</span></div>
+          <div class="credit-row"><span class="label"></span><span>Orin Torati</span></div>
+          <div class="credit-row"><span class="label"></span><span>Adrian Donca</span></div>
+          <div class="credit-row"><span class="label"></span><span>Melina Donca</span></div>
+          <div class="credit-row"><span class="label"></span><span>Gabriela Stefania Donca</span></div>
+          <div class="credit-row"><span class="label"></span><span>Ana Maria Cadena</span></div>
+          <div class="credit-row"><span class="label"></span><span>Orlando Rodriguez</span></div>
+          <div class="credit-row"><span class="label"></span><span>Olga Lucia Cadena</span></div>
+          <div class="credit-row"><span class="label"></span><span>Leonardo Alvarez</span></div>
+          <div class="credit-row"><span class="label"></span><span>SCI-Arc</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    {youtubeEmbed && (
+      <div class="video-wrap">
+        <iframe
+          src={youtubeEmbed}
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          title="Trespass — Laura Alvarez"
+        />
+      </div>
+    )}
+
+    <div class="images">
+      {layout.map((item) => (
+        <img src={item.src} alt={item.alt} class="full" />
+      ))}
+    </div>
+  </main>
+
+  <footer>
+    <span>Laura Alvarez — Director</span>
+    <span>© 2026 All rights reserved</span>
+  </footer>
+</Layout>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .back {
+    font-size: 12px;
+    color: #707070;
+    transition: color 0.15s;
+  }
+
+  .back:hover {
+    color: #1a1a1a;
+  }
+
+  main {
+    padding-top: 56px;
+  }
+
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #000;
+    margin-bottom: 8px;
+  }
+
+  .video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .images img.full {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 40px 24px 80px;
+    max-width: 1200px;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+  }
+
+  .description {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #707070;
+  }
+
+  .coming-soon-note {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .credits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 3rem;
+    align-items: start;
+  }
+
+  .credits-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .description-block {
+    grid-column: span 2;
+  }
+
+  .credit-section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+
+  .credit-row {
+    display: flex;
+    gap: 1rem;
+    font-size: 12px;
+    color: #707070;
+  }
+
+  .label {
+    width: 160px;
+    flex-shrink: 0;
+    color: #1a1a1a;
+  }
+
+  .credit-divider {
+    border-top: 1px solid #e0e0e0;
+    margin-block: 8px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #707070;
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      padding: 28px 20px 48px;
+    }
+
+    .credits {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .credit-row {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .label {
+      min-width: unset;
+    }
+
+    footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+  }
+</style>

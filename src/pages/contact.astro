@@ -1,160 +1,330 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
-<Layout title="Contact — Laura Alvarez">
-  <header>
-    <a href={base} class="back">← Laura Alvarez</a>
-    <nav>
-      <a href={`${base}about`}>About</a>
-      <a href={`${base}contact`} class="active">Contact</a>
-    </nav>
-  </header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Laura Alvarez</title>
+  <meta name="description" content="Contact Laura Alvarez — Producer and Director based in Los Angeles." />
+  <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500&family=Chivo+Mono:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-  <main>
-    <div class="contact-card">
-      <h1>Contact</h1>
+  <div class="scene">
 
-      <div class="links">
+    <!-- Back to home -->
+    <a class="back-home" href={base} aria-label="Back to home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+      </svg>
+    </a>
 
-        <a href="mailto:lauraalvarezfilm@gmail.com" class="link-item">
-          <span class="icon">
-            <!-- Email -->
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-          </span>
-          <span class="label">Email</span>
-          <span class="value">lauraalvarezfilm@gmail.com</span>
-          <span class="arrow">→</span>
-        </a>
+    <!-- Corner bracket marks -->
+    <div class="corner corner-tl"><svg viewBox="0 0 12 12"><path d="M1 6 L1 1 L6 1"/></svg></div>
+    <div class="corner corner-tr"><svg viewBox="0 0 12 12"><path d="M1 6 L1 1 L6 1"/></svg></div>
+    <div class="corner corner-bl"><svg viewBox="0 0 12 12"><path d="M1 6 L1 1 L6 1"/></svg></div>
+    <div class="corner corner-br"><svg viewBox="0 0 12 12"><path d="M1 6 L1 1 L6 1"/></svg></div>
 
-        <a href="https://www.linkedin.com/in/laura-alvarez-562055366" target="_blank" rel="noopener noreferrer" class="link-item">
-          <span class="icon">
-            <!-- LinkedIn -->
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-          </span>
-          <span class="label">LinkedIn</span>
-          <span class="value">Laura Alvarez</span>
-          <span class="arrow">→</span>
-        </a>
-
-        <a href="https://filmfreeway.com/LauraMariaAlvarezCadena" target="_blank" rel="noopener noreferrer" class="link-item">
-          <span class="icon">
-            <!-- FilmFreeway - film reel icon -->
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
-              <circle cx="12" cy="5" r="1" fill="currentColor" stroke="none"/>
-              <circle cx="12" cy="19" r="1" fill="currentColor" stroke="none"/>
-              <circle cx="5" cy="12" r="1" fill="currentColor" stroke="none"/>
-              <circle cx="19" cy="12" r="1" fill="currentColor" stroke="none"/>
-            </svg>
-          </span>
-          <span class="label">FilmFreeway</span>
-          <span class="value">Laura Maria Alvarez Cadena</span>
-          <span class="arrow">→</span>
-        </a>
-
-        <a href="https://www.instagram.com/lauraalvarezc_/" target="_blank" rel="noopener noreferrer" class="link-item">
-          <span class="icon">
-            <!-- Instagram -->
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-            </svg>
-          </span>
-          <span class="label">Instagram</span>
-          <span class="value">lauraalvarezc_</span>
-          <span class="arrow">→</span>
-        </a>
-
-      </div>
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor">
+      <div class="cursor-plus"></div>
     </div>
-  </main>
 
-  <footer>
-    <span>Laura Alvarez — Director</span>
-    <span>© 2026 All rights reserved</span>
-  </footer>
-</Layout>
+    <!-- Nav bar -->
+    <nav class="nav-top" aria-label="Main navigation">
+      <div class="nav-bar">
+        <a class="nav-item" href={`${base}work`}>Work</a>
+        <a class="nav-item" href={`${base}about`}>About</a>
+        <a class="nav-item contact active" href={`${base}contact`}>Contact</a>
+        <button class="nav-item toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <svg id="iconMoon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg id="iconSun" viewBox="0 0 24 24" style="display:none;">
+            <circle cx="12" cy="12" r="4"/>
+            <line x1="12" y1="2" x2="12" y2="4"/>
+            <line x1="12" y1="20" x2="12" y2="22"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="2" y1="12" x2="4" y2="12"/>
+            <line x1="20" y1="12" x2="22" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Contact content -->
+    <main>
+      <div class="contact-card">
+        <h1>Contact</h1>
+        <div class="links">
+
+          <a href="mailto:lauraalvarezfilm@gmail.com" class="link-item">
+            <span class="icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </span>
+            <span class="label">Email</span>
+            <span class="value">lauraalvarezfilm@gmail.com</span>
+            <span class="arrow">→</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/laura-alvarez-562055366" target="_blank" rel="noopener noreferrer" class="link-item">
+            <span class="icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </span>
+            <span class="label">LinkedIn</span>
+            <span class="value">Laura Alvarez</span>
+            <span class="arrow">→</span>
+          </a>
+
+          <a href="https://filmfreeway.com/LauraMariaAlvarezCadena" target="_blank" rel="noopener noreferrer" class="link-item">
+            <span class="icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+                <circle cx="12" cy="5" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="12" cy="19" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="5" cy="12" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="19" cy="12" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span class="label">FilmFreeway</span>
+            <span class="value">Laura Maria Alvarez Cadena</span>
+            <span class="arrow">→</span>
+          </a>
+
+          <a href="https://www.instagram.com/lauraalvarezc_/" target="_blank" rel="noopener noreferrer" class="link-item">
+            <span class="icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span class="label">Instagram</span>
+            <span class="value">lauraalvarezc_</span>
+            <span class="arrow">→</span>
+          </a>
+
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    const body = document.body;
+    const toggleBtn = document.getElementById('themeToggle');
+    const iconMoon = document.getElementById('iconMoon');
+    const iconSun = document.getElementById('iconSun');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        body.classList.add('light');
+        iconMoon.style.display = 'none';
+        iconSun.style.display = 'block';
+      } else {
+        body.classList.remove('light');
+        iconMoon.style.display = 'block';
+        iconSun.style.display = 'none';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      applyTheme(saved);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      applyTheme('light');
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyTheme(body.classList.contains('light') ? 'dark' : 'light');
+    });
+
+    const cursor = document.getElementById('cursor');
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+        cursor.style.opacity = '1';
+      });
+      document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+      });
+    }
+  </script>
+
+</body>
+</html>
 
 <style>
-  header {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
+  html, body { width: 100%; height: 100%; }
+
+  :root {
+    --bg:           #1a1710;
+    --text-primary: rgba(240,235,224,0.90);
+    --text-mid:     rgba(240,235,224,0.62);
+    --text-low:     rgba(192,176,144,0.40);
+    --text-ghost:   rgba(192,176,144,0.22);
+    --border-warm:  rgba(200,186,144,0.13);
+    --border-faint: rgba(200,186,144,0.07);
+    --nav-bg:       rgba(34,30,18,0.92);
+    --font:         'Chivo', sans-serif;
+  }
+
+  body.light {
+    --bg:           #f7f3ec;
+    --text-primary: rgba(26,22,8,0.88);
+    --text-mid:     rgba(26,22,8,0.55);
+    --text-low:     rgba(26,22,8,0.30);
+    --text-ghost:   rgba(26,22,8,0.18);
+    --border-warm:  rgba(26,22,8,0.10);
+    --border-faint: rgba(26,22,8,0.06);
+    --nav-bg:       rgba(247,243,236,0.92);
+  }
+
+  .scene {
+    min-height: 100%;
+    background: var(--bg);
+    transition: background 0.6s ease;
+    cursor: none;
+  }
+
+  /* ─── Back arrow ────────────────────────────────────── */
+  .back-home {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
+    top: 18px;
+    left: 18px;
+    z-index: 50;
+    color: var(--text-low);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 24px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
+    transition: color 0.2s;
   }
+  .back-home:hover { color: var(--text-primary); }
+  .back-home svg { width: 14px; height: 14px; }
 
-  .back {
-    font-size: 12px;
-    color: #707070;
-    transition: color 0.15s;
+  /* ─── Corner brackets ────────────────────────────────── */
+  .corner {
+    position: fixed;
+    z-index: 15;
+    pointer-events: none;
   }
-
-  .back:hover { color: #1a1a1a; }
-
-  nav {
-    display: flex;
-    gap: 24px;
+  .corner svg {
+    width: 12px; height: 12px;
+    stroke: rgba(200,186,144,0.12);
+    fill: none;
+    stroke-width: 1;
   }
+  body.light .corner svg { stroke: rgba(26,22,8,0.1); }
+  .corner-tl { top: 18px; left: 18px; }
+  .corner-tr { top: 18px; right: 18px; transform: rotate(90deg); }
+  .corner-bl { bottom: 18px; left: 18px; transform: rotate(-90deg); }
+  .corner-br { bottom: 18px; right: 18px; transform: rotate(180deg); }
 
-  nav a {
-    font-size: 12px;
-    color: #707070;
-    transition: color 0.15s;
-  }
-
-  nav a:hover,
-  nav a.active {
-    color: #1a1a1a;
-  }
-
-  main {
-    height: 100svh;
+  /* ─── Nav bar ────────────────────────────────────────── */
+  .nav-top {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 56px;
+    padding: 16px 24px;
+    pointer-events: none;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--nav-bg);
+    border: 0.5px solid var(--border-warm);
+    pointer-events: all;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.6s ease, border-color 0.6s ease;
+  }
+
+  .nav-item {
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-mid);
+    padding: 6px 18px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    border-right: 0.5px solid var(--border-faint);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    transition: color 0.2s;
+  }
+  .nav-item:last-child { border-right: none; }
+  .nav-item:hover, .nav-item.active { color: var(--text-primary); }
+
+  .nav-item.contact {
+    background: rgba(200,186,144,0.08);
+    color: var(--text-mid);
+  }
+
+  .nav-item.toggle {
+    padding: 6px 13px;
+    color: var(--text-ghost);
+  }
+  .nav-item.toggle svg {
+    width: 10px; height: 10px;
+    fill: none; stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* ─── Main content ───────────────────────────────────── */
+  main {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
   }
 
   .contact-card {
     width: min(480px, 100%);
-    padding-inline: 24px;
-  }
-
-  @media (min-width: 769px) {
-    .contact-card {
-      padding-inline: 0;
-    }
   }
 
   h1 {
-    font-size: 12px;
-    font-weight: 500;
-    color: #1a1a1a;
-    margin-bottom: 24px;
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-primary);
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
   }
 
   .links {
-    border-top: 1px solid #e0e0e0;
+    border-top: 0.5px solid var(--border-warm);
   }
 
   .link-item {
@@ -162,7 +332,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     align-items: center;
     gap: 16px;
     padding: 14px 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 0.5px solid var(--border-faint);
+    text-decoration: none;
     transition: padding-left 0.2s;
   }
 
@@ -171,52 +342,77 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   }
 
   .link-item:hover .arrow {
-    color: #1a1a1a;
+    color: var(--text-primary);
   }
 
   .icon {
-    color: #707070;
+    color: var(--text-low);
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
 
   .label {
-    font-size: 11px;
-    color: #1a1a1a;
-    min-width: 90px;
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-primary);
+    min-width: 80px;
     letter-spacing: 0.05em;
   }
 
   .value {
     flex: 1;
-    font-size: 12px;
-    color: #707070;
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-mid);
+    letter-spacing: 0.02em;
   }
 
   .arrow {
-    font-size: 12px;
-    color: #c0c0c0;
+    font-size: 11px;
+    color: var(--text-ghost);
     transition: color 0.2s;
   }
 
-  footer {
+  /* ─── Custom cursor ──────────────────────────────────── */
+  .cursor {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 24px;
-    font-size: 11px;
-    color: #707070;
+    z-index: 100;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .cursor-plus {
+    width: 20px; height: 20px;
+    position: relative;
+  }
+  .cursor-plus::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    height: 0.5px;
+    background: rgba(200,186,144,0.65);
+    transform: translateY(-50%);
+  }
+  .cursor-plus::after {
+    content: '';
+    position: absolute;
+    left: 50%; top: 0; bottom: 0;
+    width: 0.5px;
+    background: rgba(200,186,144,0.65);
+    transform: translateX(-50%);
+  }
+  body.light .cursor-plus::before,
+  body.light .cursor-plus::after {
+    background: rgba(26,22,8,0.45);
   }
 
-  @media (max-width: 768px) {
-    footer {
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      text-align: center;
-    }
+  /* ─── Mobile ─────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .nav-item { padding: 6px 12px; font-size: 10px; }
+    .value { display: none; }
   }
 </style>

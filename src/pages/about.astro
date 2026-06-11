@@ -1,200 +1,392 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
-<Layout title="About — Laura Alvarez">
-  <header>
-    <a href={base} class="back">← Laura Alvarez</a>
-    <nav>
-      <a href={`${base}about`} class="active">About</a>
-      <a href={`${base}contact`}>Contact</a>
-    </nav>
-  </header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Laura Alvarez</title>
+  <meta name="description" content="Laura Alvarez — Producer and Director based in Los Angeles." />
+  <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500&family=Chivo+Mono:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-  <main>
-    <div class="about-card">
-      <img src={`${base}images/Laura_Alvarez_Headshot.jpg`} alt="Laura Alvarez" />
-      <div class="text-col">
-        <div class="meta">
-          <span class="name">Laura Alvarez</span>
-          <span class="info">Director · Compositor</span>
-        </div>
-        <p class="bio">
-          Laura Alvarez is a Colombian director, with a background in architecture and design,
-          currently based in Los Angeles, California. Her work explores the intersection between
-          everyday reality and moments of fantastical fiction, seamlessly merging both into
-          experiences that feel ordinarily extraordinary. Her work revolves around music videos,
-          branded content and short films.
-        </p>
-      </div>
+  <div class="scene">
+
+    <!-- Back to home -->
+    <a class="back-home" href={base} aria-label="Back to home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+      </svg>
+    </a>
+
+    <!-- Corner bracket marks -->
+    <div class="corner corner-tl"><svg viewBox="0 0 12 12"><path d="M1 6 L1 1 L6 1"/></svg></div>
+    <div class="corner corner-tr"><svg viewBox="0 0 12 12"><path d="M1 6 L1 1 L6 1"/></svg></div>
+    <div class="corner corner-bl"><svg viewBox="0 0 12 12"><path d="M1 6 L1 1 L6 1"/></svg></div>
+    <div class="corner corner-br"><svg viewBox="0 0 12 12"><path d="M1 6 L1 1 L6 1"/></svg></div>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor">
+      <div class="cursor-plus"></div>
     </div>
-  </main>
 
-  <a href="https://www.instagram.com/lauraalvarezc_/" target="_blank" rel="noopener noreferrer" class="instagram">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-    </svg>
-    <span>lauraalvarezc_</span>
-  </a>
+    <!-- Nav bar -->
+    <nav class="nav-top" aria-label="Main navigation">
+      <div class="nav-bar">
+        <a class="nav-item" href={`${base}work`}>Work</a>
+        <a class="nav-item active" href={`${base}about`}>About</a>
+        <a class="nav-item contact" href={`${base}contact`}>Contact</a>
+        <button class="nav-item toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <svg id="iconMoon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg id="iconSun" viewBox="0 0 24 24" style="display:none;">
+            <circle cx="12" cy="12" r="4"/>
+            <line x1="12" y1="2" x2="12" y2="4"/>
+            <line x1="12" y1="20" x2="12" y2="22"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="2" y1="12" x2="4" y2="12"/>
+            <line x1="20" y1="12" x2="22" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
 
-  <footer>
-    <span>Laura Alvarez — Director</span>
-    <span>© 2026 All rights reserved</span>
-  </footer>
-</Layout>
+    <!-- About content -->
+    <main>
+      <div class="about-card">
+        <img src={`${base}images/Laura_Alvarez_Headshot.jpg`} alt="Laura Alvarez" />
+        <div class="text-col">
+          <div class="meta">
+            <span class="name">Laura Alvarez</span>
+            <span class="info">Director · Compositor</span>
+          </div>
+          <p class="bio">
+            Laura Alvarez is a Colombian director, with a background in architecture and design,
+            currently based in Los Angeles, California. Her work explores the intersection between
+            everyday reality and moments of fantastical fiction, seamlessly merging both into
+            experiences that feel ordinarily extraordinary. Her work revolves around music videos,
+            branded content and short films.
+          </p>
+          <a href="https://www.instagram.com/lauraalvarezc_/" target="_blank" rel="noopener noreferrer" class="instagram">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+            <span>lauraalvarezc_</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    const body = document.body;
+    const toggleBtn = document.getElementById('themeToggle');
+    const iconMoon = document.getElementById('iconMoon');
+    const iconSun = document.getElementById('iconSun');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        body.classList.add('light');
+        iconMoon.style.display = 'none';
+        iconSun.style.display = 'block';
+      } else {
+        body.classList.remove('light');
+        iconMoon.style.display = 'block';
+        iconSun.style.display = 'none';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      applyTheme(saved);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      applyTheme('light');
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyTheme(body.classList.contains('light') ? 'dark' : 'light');
+    });
+
+    const cursor = document.getElementById('cursor');
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+        cursor.style.opacity = '1';
+      });
+      document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+      });
+    }
+  </script>
+
+</body>
+</html>
 
 <style>
-  header {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
+  html, body { width: 100%; height: 100%; }
+
+  :root {
+    --bg:           #1a1710;
+    --text-primary: rgba(240,235,224,0.90);
+    --text-mid:     rgba(240,235,224,0.62);
+    --text-low:     rgba(192,176,144,0.40);
+    --text-ghost:   rgba(192,176,144,0.22);
+    --border-warm:  rgba(200,186,144,0.13);
+    --border-faint: rgba(200,186,144,0.07);
+    --nav-bg:       rgba(34,30,18,0.92);
+    --font:         'Chivo', sans-serif;
+  }
+
+  body.light {
+    --bg:           #f7f3ec;
+    --text-primary: rgba(26,22,8,0.88);
+    --text-mid:     rgba(26,22,8,0.55);
+    --text-low:     rgba(26,22,8,0.30);
+    --text-ghost:   rgba(26,22,8,0.18);
+    --border-warm:  rgba(26,22,8,0.10);
+    --border-faint: rgba(26,22,8,0.06);
+    --nav-bg:       rgba(247,243,236,0.92);
+  }
+
+  .scene {
+    min-height: 100%;
+    background: var(--bg);
+    transition: background 0.6s ease;
+    cursor: none;
+  }
+
+  /* ─── Back arrow ────────────────────────────────────── */
+  .back-home {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
+    top: 18px;
+    left: 18px;
+    z-index: 50;
+    color: var(--text-low);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 24px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
+    transition: color 0.2s;
   }
+  .back-home:hover { color: var(--text-primary); }
+  .back-home svg { width: 14px; height: 14px; }
 
-  .back {
-    font-size: 12px;
-    color: #707070;
-    transition: color 0.15s;
+  /* ─── Corner brackets ────────────────────────────────── */
+  .corner {
+    position: fixed;
+    z-index: 15;
+    pointer-events: none;
   }
-
-  .back:hover {
-    color: #1a1a1a;
+  .corner svg {
+    width: 12px; height: 12px;
+    stroke: rgba(200,186,144,0.12);
+    fill: none;
+    stroke-width: 1;
   }
+  body.light .corner svg { stroke: rgba(26,22,8,0.1); }
+  .corner-tl { top: 18px; left: 18px; }
+  .corner-tr { top: 18px; right: 18px; transform: rotate(90deg); }
+  .corner-bl { bottom: 18px; left: 18px; transform: rotate(-90deg); }
+  .corner-br { bottom: 18px; right: 18px; transform: rotate(180deg); }
 
-  nav {
-    display: flex;
-    gap: 24px;
-  }
-
-  nav a {
-    font-size: 12px;
-    color: #707070;
-    transition: color 0.15s;
-  }
-
-  nav a:hover,
-  nav a.active {
-    color: #1a1a1a;
-  }
-
-  main {
-    height: 100svh;
+  /* ─── Nav bar ────────────────────────────────────────── */
+  .nav-top {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 56px;
+    padding: 16px 24px;
+    pointer-events: none;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--nav-bg);
+    border: 0.5px solid var(--border-warm);
+    pointer-events: all;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.6s ease, border-color 0.6s ease;
+  }
+
+  .nav-item {
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-mid);
+    padding: 6px 18px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    border-right: 0.5px solid var(--border-faint);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    transition: color 0.2s;
+  }
+  .nav-item:last-child { border-right: none; }
+  .nav-item:hover, .nav-item.active { color: var(--text-primary); }
+
+  .nav-item.contact {
+    background: rgba(200,186,144,0.08);
+    color: var(--text-mid);
+  }
+
+  .nav-item.toggle {
+    padding: 6px 13px;
+    color: var(--text-ghost);
+  }
+  .nav-item.toggle svg {
+    width: 10px; height: 10px;
+    fill: none; stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* ─── Main content ───────────────────────────────────── */
+  main {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
   }
 
   .about-card {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 48px;
   }
 
   .about-card img {
-    width: 320px;
+    width: 280px;
     aspect-ratio: 2 / 3;
     object-fit: cover;
     display: block;
+    flex-shrink: 0;
   }
 
   .text-col {
-    position: absolute;
-    left: calc(320px + 40px);
-    top: 50%;
-    transform: translateY(-50%);
     width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .meta {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    margin-bottom: 16px;
   }
 
   .name {
+    font-family: var(--font);
     font-size: 12px;
-    color: #1a1a1a;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
   }
 
   .info {
-    font-size: 11px;
-    color: #707070;
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-low);
+    letter-spacing: 0.06em;
   }
 
   .bio {
-    font-size: 12px;
-    color: #707070;
-    line-height: 1.8;
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.9;
   }
 
+  .instagram {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font);
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-low);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+    width: fit-content;
+  }
+  .instagram:hover { color: var(--text-primary); }
+
+  /* ─── Custom cursor ──────────────────────────────────── */
+  .cursor {
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .cursor-plus {
+    width: 20px; height: 20px;
+    position: relative;
+  }
+  .cursor-plus::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    height: 0.5px;
+    background: rgba(200,186,144,0.65);
+    transform: translateY(-50%);
+  }
+  .cursor-plus::after {
+    content: '';
+    position: absolute;
+    left: 50%; top: 0; bottom: 0;
+    width: 0.5px;
+    background: rgba(200,186,144,0.65);
+    transform: translateX(-50%);
+  }
+  body.light .cursor-plus::before,
+  body.light .cursor-plus::after {
+    background: rgba(26,22,8,0.45);
+  }
+
+  /* ─── Mobile ─────────────────────────────────────────── */
   @media (max-width: 768px) {
-    main {
-      height: auto;
-      min-height: 100svh;
-      align-items: flex-start;
-      padding: 80px 24px 80px;
-    }
-
     .about-card {
-      width: 100%;
+      flex-direction: column;
+      gap: 28px;
     }
-
     .about-card img {
       width: 100%;
       aspect-ratio: 3 / 4;
     }
-
     .text-col {
-      position: static;
-      transform: none;
       width: 100%;
-      margin-top: 24px;
     }
-  }
-
-  .instagram {
-    position: fixed;
-    bottom: 20px;
-    right: 24px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    color: #707070;
-    transition: color 0.15s;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.92);
-    padding: 4px 0 4px 8px;
-  }
-
-  .instagram:hover {
-    color: #1a1a1a;
-  }
-
-  footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 24px;
-    border-top: 1px solid #e0e0e0;
-    font-size: 11px;
-    color: #707070;
-  }
-
-  @media (max-width: 768px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
+    .nav-item { padding: 6px 12px; font-size: 10px; }
   }
 </style>

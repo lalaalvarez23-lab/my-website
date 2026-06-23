@@ -55,7 +55,6 @@ const projects = [
     <!-- Nav bar -->
     <nav class="nav-top" aria-label="Main navigation">
       <div class="nav-bar">
-        <a class="nav-item active" href={`${base}work`}>Work</a>
         <a class="nav-item" href={`${base}about`}>About</a>
         <a class="nav-item contact" href={`${base}contact`}>Contact</a>
         <button class="nav-item toggle" id="themeToggle" aria-label="Toggle light/dark mode">
@@ -277,12 +276,12 @@ const projects = [
 
   .project-card {
     display: block;
-    width: 260px;
+    width: 329px;
     text-decoration: none;
   }
 
   .thumb {
-    width: 260px;
+    width: 329px;
     aspect-ratio: 2 / 3;
     overflow: hidden;
     background: rgba(200,186,144,0.05);
@@ -380,7 +379,7 @@ const projects = [
   /* ─── Mobile ─────────────────────────────────────────── */
   @media (max-width: 768px) {
     main { gap: 48px; }
-    .project-card, .thumb { width: min(260px, 78vw); }
+    .project-card, .thumb { width: min(329px, 78vw); }
     .nav-item { padding: 6px 12px; font-size: 10px; }
   }
 </style>
